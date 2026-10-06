@@ -117,5 +117,3 @@ impl Boxed {
     pub fn new(self, error: Box<dyn StdError + Send + Sync>) -> Error {
         let backtrace = backtrace_if_absent!(&*error);
         Error::construct_from_boxed(error, backtrace)
-    }
-}
